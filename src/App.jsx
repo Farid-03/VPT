@@ -4,6 +4,15 @@ import Button from './components/Button/Button'
 import { ways } from './data'
 
 export default function App() {
+	let content = 'Нажми на кнопку'
+
+	console.log('App Component Render')
+
+	function handleCLick(type) {
+		console.log('button clicked', type)
+		content = type
+	}
+
 	return (
 		<div>
 			<Header />
@@ -19,9 +28,11 @@ export default function App() {
 				</section>
 				<section>
 					<h3>Чем мы отличаемся от других</h3>
-					<Button>Junior</Button>
-					<Button>Middle</Button>
-					<Button>Senior</Button>
+					<Button onClick={() => handleCLick('way')}>Junior</Button>
+					<Button onClick={() => handleCLick('easy')}>Middle</Button>
+					<Button onClick={() => handleCLick('program')}>Senior</Button>
+
+					<p>{content}</p>
 				</section>
 			</main>
 		</div>

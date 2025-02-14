@@ -1,9 +1,11 @@
 import './Button.css'
 
-export default function Button({ children }) {
-	function handleClick() {
-		console.log('clicked');
-	}
+export default function Button({ children, onClick }) {
+	console.log('Button Component Render')
 
-	return <button className='button' onClick={handleClick}>{children}</button>
+	return (
+		<button className='button' onClick={onClick}>
+			{children}
+		</button>
+	)
 }
