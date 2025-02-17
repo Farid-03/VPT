@@ -5,11 +5,10 @@ import { useState } from 'react'
 import { ways, differences } from './data'
 
 export default function App() {
-
-	const [content, setContent] = useState('Нажми на кнопку')
+	const [contentType, setContentType] = useState(null)
 
 	function handleCLick(type) {
-		setContent(type)	
+		setContentType(type)
 	}
 
 	return (
@@ -31,8 +30,9 @@ export default function App() {
 					<Button onClick={() => handleCLick('easy')}>Middle</Button>
 					<Button onClick={() => handleCLick('program')}>Senior</Button>
 
-					<p>{differences[content]}</p>
-					
+					{/* <p>{differences[contentType]}</p> */}
+					{!contentType && <p>Нажит на кнопку</p>}
+					{!contentType && <p>{differences[contentType]}</p>}
 				</section>
 			</main>
 		</div>
