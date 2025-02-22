@@ -26,13 +26,21 @@ export default function App() {
 				</section>
 				<section>
 					<h3>Чем мы отличаемся от других</h3>
-					<Button onClick={() => handleCLick('way')}>Junior</Button>
-					<Button onClick={() => handleCLick('easy')}>Middle</Button>
-					<Button onClick={() => handleCLick('program')}>Senior</Button>
-
-					{/* <p>{differences[contentType]}</p> */}
-					{!contentType && <p>Нажит на кнопку</p>}
-					{!contentType && <p>{differences[contentType]}</p>}
+					<Button
+					 	isActive={contentType === 'way'}
+						onClick={() => handleCLick('way')}>Junior
+					</Button>
+					<Button
+					 	isActive={contentType === 'easy'}
+						onClick={() => handleCLick('easy')}>Middle
+					</Button>
+					<Button
+					 	isActive={contentType === 'program'}
+						onClick={() => handleCLick('program')}>Senior
+					</Button>
+					
+					{!contentType && <p>Нажми на кнопку</p>}
+					{contentType && <p>{differences[contentType]}</p>}
 				</section>
 			</main>
 		</div>
