@@ -1,8 +1,10 @@
 import Button from "./Button/Button";
 
-export default function TabSection ({ active, onChange }) {
+export default function TabSection({active, onChange}) {
     return (
-        <section style={{marginBottom: '1rem'}}>
+        <section style={{
+                marginBottom: '1rem'
+            }}>
             <Button isActive={active === 'main'} onClick={() => onChange('main')}>
                 Главная
             </Button>

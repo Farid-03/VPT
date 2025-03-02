@@ -4,39 +4,25 @@ import DifferencesSection from './components/DifferencesSection'
 import IntroSection from './components/IntroSection'
 import TabSection from './components/TabSection'
 import FeedBackSection from './components/FeedBackSection'
-import { useState } from 'react'
+import {useState} from 'react'
 
 export default function App() {
 
-	const [tab, setTab] = useState('feedback')
+    const [tab, setTab] = useState('feedback')
 
-	return (
-		<>
-			<Header />
+    return (
+        <> < Header /> <main>
 
-			<main>
+            <IntroSection/>
 
-				<IntroSection/>
+            <TabSection active={tab} onChange={(current) => setTab(current)}/> {
+                tab === 'main' && (<> < TeachingSection /> <DifferencesSection/>
+            </>)
+            }
 
-				<TabSection
-						active={tab} 
-						onChange={(current) => setTab(current)}
-				/>
+            {tab === 'feedback' && (<> < FeedBackSection /> </>)}
 
-				{tab === 'main' && (
-					<>
-						<TeachingSection/>
-						<DifferencesSection/>
-					</>
-				)}
-
-				{tab === 'feedback' && (
-					<>
-						<FeedBackSection/>
-					</>
-				)}
-
-			</main>
-		</>
-	)
+        </main>
+    </>
+    )
 }
