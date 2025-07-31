@@ -19,9 +19,9 @@ export default function DifferencesSection() {
                 isActive={contentType === 'program'}
                 onClick={() => handleCLick('program')}>Senior
             </Button>
-
-            {!contentType && <p>Нажми на кнопку</p>}
-            {contentType && <p>{differences[contentType]}</p>}
+            <p>{contentType ? differences[contentType] : 'Нажми на кнопку'}</p>
+            {/* {!contentType && <p>Нажми на кнопку</p>}
+            {contentType && <p>{differences[contentType]}</p>} */}
         </section>
     )
 }

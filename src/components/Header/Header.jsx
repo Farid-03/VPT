@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react'
 import logo from '/public/logo-name.svg'
 import  './Header.css'
 
-export default function Header() {
-	const [time, setTime] = useState(new Date().toLocaleTimeString())
+
+export default function Header () {
+	const [time, setTime] = useState(new Date().toLocaleDateString())
 
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -15,9 +16,11 @@ export default function Header() {
 
 	return (
 		<header>
-			<img src={logo} alt={'Result'} />
+			<img src={logo} alt={'Result'}/>
 			<h3>AzETQ</h3>
 			<span>Clock: {time}</span>
 		</header>
 	)
+
+
 }
