@@ -24,6 +24,7 @@ export default function EffectSection() {
 					since the 1500s, when an unknown printer took a galley of type and
 					scrambled it to make a type specimen book.{' '}
 				</p>
+				<Button onClick={() => setModal(false)}>Close</Button>
 			</Modal>
 		</section>
 	)
