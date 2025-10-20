@@ -1,26 +1,26 @@
 import { useState, useEffect } from 'react'
 import logo from '/public/logo-name.svg'
-import  './Header.css'
+import './Header.css'
 
-
-export default function Header () {
-	const [time, setTime] = useState(new Date().toLocaleDateString())
+export default function Header() {
+	const [time, setTime] = useState(new Date().toLocaleTimeString())
 
 	useEffect(() => {
 		const interval = setInterval(() => {
 			setTime(new Date().toLocaleTimeString())
 		}, 1000)
 
-		return () => clearInterval(interval)
+		return () => {
+			clearInterval(interval)
+			console.log('cleaning...')
+		}
 	}, [])
 
 	return (
 		<header>
-			<img src={logo} alt={'Result'}/>
+			<img src={logo} alt='Result' />
 			<h3>AzETQ</h3>
 			<span>Clock: {time}</span>
 		</header>
 	)
-
-
 }
