@@ -11,8 +11,6 @@ function StateVsRef() {
 		}
 	}
 
-	console.log(inputRef)
-
 	return (
 		<div>
 			<h3>Input value: {value}</h3>
