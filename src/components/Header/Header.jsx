@@ -19,7 +19,7 @@ export default function Header() {
 	return (
 		<header>
 			<img src={logo} alt='Result' />
-			<h3>AzETQ</h3>
+			<h2>Result University</h2>
 			<span>Clock: {time}</span>
 		</header>
 	)

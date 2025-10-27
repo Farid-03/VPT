@@ -6,6 +6,7 @@ import TabSection from './components/TabSection'
 import FeedBackSection from './components/FeedBackSection'
 import { useState } from 'react'
 import EffectSection from './components/EffectSection'
+import Footer from './components/Footer/Footer'
 
 export default function App() {
 	const [visible, setVisible] = useState(true)
@@ -39,6 +40,7 @@ export default function App() {
 						<EffectSection />{' '}
 					</>
 				)}
+				<Footer />
 			</main>
 		</>
 	)
