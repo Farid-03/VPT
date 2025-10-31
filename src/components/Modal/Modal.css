@@ -1,8 +1,21 @@
-dialog {
+dialog.modal {
 	width: 400px;
 	margin: 10rem auto;
 	padding: 1rem;
 	border: 1px solid #ccc;
 	border-radius: 10px;
 	z-index: 100;
+	opacity: 0;
+	transform: translateY(-20px);
+	transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+dialog.modal.open {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+dialog.modal.closing {
+	opacity: 0;
+	transform: translateY(-20px);
 }
